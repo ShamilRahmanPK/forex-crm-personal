@@ -1,0 +1,40 @@
+.support {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--fs-lg);
+  color: var(--color-border-strong);
+}
+
+.count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--color-checkbox);
+  font-size: var(--fs-xs);
+  color: var(--color-bg);
+}
+
+.filters {
+  margin-top: 24px;
+  gap: 10px;
+}
+
+.table {
+  margin-top: 32px;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.skeleton {
+  height: 240px;
+  margin-top: 32px;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}

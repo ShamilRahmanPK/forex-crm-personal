@@ -1,0 +1,36 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.mark {
+  width: 1.4em;
+  height: 1.4em;
+  box-sizing: border-box;
+  border: 0.17em solid var(--color-primary);
+  border-radius: 50%;
+}
+
+.image {
+  display: block;
+  width: auto;
+}
+
+.sm {
+  font-size: 19px;
+}
+
+.md {
+  font-size: 24px;
+}
+
+.lg {
+  font-size: 40px;
+}

@@ -1,0 +1,141 @@
+/* Shared layout for standard portal pages. */
+.page {
+  max-width: 1280px;
+  padding: 26px 32px 0;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.titleRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 700;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+}
+
+/* Bordered card with rows separated by hairlines */
+.card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+}
+
+.cardRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+  min-height: 80px;
+  padding: 16px 22px;
+}
+
+.cardRow + .cardRow {
+  border-top: 1px solid var(--color-border);
+}
+
+/* Data table */
+.tableWrap {
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-md);
+  white-space: nowrap;
+}
+
+.table th {
+  padding: 14px 20px;
+  background: var(--color-surface);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-align: left;
+}
+
+.table td {
+  padding: 14px 20px;
+  border-top: 1px solid var(--color-border);
+}
+
+.num {
+  text-align: right !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.positive {
+  color: var(--color-success);
+}
+
+.negative {
+  color: var(--color-danger);
+}
+
+.status {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--color-surface);
+  font-size: var(--fs-sm);
+}
+
+.statusDone {
+  background: color-mix(in srgb, var(--color-success) 12%, transparent);
+  color: var(--color-success);
+}
+
+.statusPending {
+  background: color-mix(in srgb, var(--color-warning) 12%, transparent);
+  color: var(--color-warning);
+}
+
+.statusRejected {
+  background: color-mix(in srgb, var(--color-danger) 12%, transparent);
+  color: var(--color-danger);
+}
+
+.link {
+  color: var(--color-link);
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: 20px 16px 0;
+  }
+
+  .title {
+    font-size: var(--fs-2xl);
+  }
+
+  .sectionTitle {
+    font-size: var(--fs-xl);
+  }
+
+  .cardRow {
+    padding: 16px;
+  }
+}

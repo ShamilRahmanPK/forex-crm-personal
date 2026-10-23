@@ -1,0 +1,40 @@
+.wrapper {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.button {
+  display: flex;
+  padding: 2px;
+  border: 0;
+  background: transparent;
+  color: var(--color-text-secondary);
+  cursor: help;
+}
+
+.tip {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  z-index: 20;
+  width: max-content;
+  max-width: 260px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--color-text);
+  font-size: var(--fs-sm);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-bg);
+  white-space: normal;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%);
+  transition: opacity var(--transition);
+}
+
+.wrapper:hover .tip,
+.button:focus-visible + .tip {
+  opacity: 1;
+}

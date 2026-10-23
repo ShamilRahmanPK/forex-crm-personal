@@ -1,0 +1,411 @@
+/* ---------- Settings shell ---------- */
+.layout {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 24px;
+  max-width: 1360px;
+  padding: 24px 28px 48px;
+}
+
+.menu {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.menuHeading {
+  padding: 0 10px 4px;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.menuItem {
+  display: block;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-md);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+.menuItem:hover {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.menuItemActive,
+.menuItemActive:hover {
+  background: var(--color-bg);
+  box-shadow: inset 0 0 0 1px var(--color-border);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.mobileMenu {
+  display: none;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+/* Branding and Team are full admin pages with their own padding; settings
+   pages themselves render fragments of <section>s, so only those divs match. */
+.page > div[class] {
+  max-width: none;
+  padding: 0;
+}
+
+/* ---------- Section card ---------- */
+.section {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+}
+
+.sectionHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sectionHead h2 {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+}
+
+.sectionHead p {
+  max-width: 70ch;
+  margin-top: 4px;
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+}
+
+.sectionBody {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 20px;
+}
+
+.sectionFoot {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  padding: 14px 20px;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-page);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.dirtyNote {
+  font-size: var(--fs-sm);
+  color: var(--color-warning);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.grid3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* ---------- Fields ---------- */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.label {
+  padding: 0;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+}
+
+.hint {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  height: var(--control-height);
+  padding: 0 14px;
+  border: 1px solid var(--color-input-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-md);
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--color-text);
+}
+
+.secretEdit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.secretSaved {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: var(--control-height);
+  padding: 0 14px;
+  border: 1px dashed var(--color-input-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-page);
+  color: var(--color-text-secondary);
+}
+
+.secretSaved span {
+  flex: 1;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: var(--fs-sm);
+}
+
+.textButton {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-link);
+  white-space: nowrap;
+}
+
+.copyValue {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: var(--control-height);
+  padding: 0 10px 0 14px;
+  border-radius: var(--radius-sm);
+  background: var(--color-page);
+}
+
+.copyValue code {
+  flex: 1;
+  min-width: 0;
+  font-size: var(--fs-sm);
+  overflow-wrap: anywhere;
+}
+
+.toggleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.toggleRow:last-child {
+  border-bottom: 0;
+}
+
+.toggleLabel {
+  font-weight: 500;
+}
+
+.toggleHint {
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+}
+
+.chips {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.chips > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--color-input-border);
+  border-radius: 999px;
+  font-size: var(--fs-sm);
+  cursor: pointer;
+}
+
+.chip input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.chip:has(input:focus-visible) {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.chipOn {
+  border-color: var(--color-text);
+  background: var(--color-primary-soft);
+  font-weight: 600;
+}
+
+.callout {
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--color-page);
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+}
+
+.result {
+  font-size: var(--fs-sm);
+}
+
+.resultOk {
+  color: var(--color-success);
+}
+
+.resultErr {
+  color: var(--color-danger);
+}
+
+.inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.inline > :first-child {
+  flex: 1;
+  min-width: 220px;
+}
+
+/* ---------- Server cards ---------- */
+.serverHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+}
+
+.serverName {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+}
+
+.serverMeta {
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+}
+
+.serverActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.groupsTable code {
+  font-size: var(--fs-sm);
+}
+
+.templateVars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.templateVars button {
+  padding: 3px 8px;
+  border: 1px solid var(--color-input-border);
+  border-radius: 6px;
+  background: var(--color-page);
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: var(--fs-xs);
+}
+
+.textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-input-border);
+  border-radius: var(--radius-sm);
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  resize: vertical;
+}
+
+.preview {
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-page);
+  white-space: pre-wrap;
+}
+
+.previewSubject {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-border);
+  font-weight: 700;
+}
+
+@media (max-width: 960px) {
+  .layout {
+    grid-template-columns: 1fr;
+    padding: 16px 12px 40px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .mobileMenu {
+    display: block;
+  }
+
+  .mobileMenu select {
+    width: 100%;
+    height: var(--control-height);
+    padding: 0 12px;
+    border: 1px solid var(--color-input-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
+    font-size: var(--fs-md);
+  }
+
+  .grid,
+  .grid3 {
+    grid-template-columns: 1fr;
+  }
+}

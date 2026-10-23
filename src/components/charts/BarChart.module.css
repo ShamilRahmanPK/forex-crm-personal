@@ -1,0 +1,81 @@
+.figure {
+  margin: 0;
+}
+
+.wrap {
+  position: relative;
+  width: 100%;
+}
+
+.wrap svg {
+  display: block;
+  overflow: visible;
+}
+
+.grid {
+  stroke: var(--color-border);
+  stroke-width: 1;
+}
+
+.baseline {
+  stroke: var(--color-border-strong);
+  stroke-width: 1;
+}
+
+.axis {
+  fill: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+.bar {
+  fill: var(--color-primary);
+}
+
+.hitCol {
+  fill: transparent;
+}
+
+.hoverCol {
+  fill: var(--color-surface);
+}
+
+.tooltip {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 140px;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  box-shadow: var(--shadow-popover);
+  font-size: var(--fs-sm);
+  pointer-events: none;
+}
+
+.tipLabel {
+  color: var(--color-text-secondary);
+}
+
+.table {
+  margin-top: 12px;
+  font-size: var(--fs-sm);
+}
+
+.table summary {
+  color: var(--color-link);
+  cursor: pointer;
+}
+
+.table table {
+  margin-top: 8px;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 6px 16px 6px 0;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+}

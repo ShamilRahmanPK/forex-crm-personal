@@ -1,0 +1,64 @@
+.section {
+  margin-top: 40px;
+}
+
+.intro {
+  margin: 28px 0 20px;
+  line-height: 1.6;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(140px, 1fr) 2fr auto;
+}
+
+.row > strong {
+  font-weight: 600;
+}
+
+.row > :last-child:not(strong) {
+  justify-self: end;
+}
+
+.dangerCard {
+  margin-top: 28px;
+}
+
+.dangerRow {
+  justify-content: space-between;
+}
+
+.danger {
+  background: color-mix(in srgb, var(--color-danger) 8%, var(--color-bg));
+  color: var(--color-danger);
+}
+
+.danger:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--color-danger) 14%, var(--color-bg));
+}
+
+.dangerSolid {
+  background: var(--color-danger);
+  color: var(--color-bg);
+}
+
+.dangerSolid:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--color-danger) 88%, black);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (max-width: 720px) {
+  .row {
+    grid-template-columns: 1fr auto;
+  }
+
+  .row > span {
+    grid-column: 1 / -1;
+    color: var(--color-text-secondary);
+  }
+}

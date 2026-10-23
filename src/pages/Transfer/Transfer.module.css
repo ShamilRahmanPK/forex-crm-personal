@@ -1,0 +1,80 @@
+.allMethods {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: var(--fs-lg);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 716px) minmax(220px, 1fr);
+  gap: 32px 64px;
+  margin-top: 36px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.methodIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.amount input {
+  font-size: var(--fs-xl);
+}
+
+.currency {
+  padding-right: 6px;
+  font-size: var(--fs-lg);
+}
+
+.disabled {
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.terms {
+  align-self: start;
+  padding-left: 28px;
+  border-left: 1px solid var(--color-border);
+}
+
+.terms h2 {
+  margin-bottom: 20px;
+  font-size: var(--fs-lg);
+  font-weight: 600;
+}
+
+.terms dl {
+  margin: 0 0 28px;
+}
+
+.terms dt {
+  color: var(--color-text-secondary);
+}
+
+.terms dd {
+  margin: 4px 0 18px;
+}
+
+@media (max-width: 960px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .terms {
+    padding-left: 0;
+    padding-top: 24px;
+    border-left: 0;
+    border-top: 1px solid var(--color-border);
+  }
+}

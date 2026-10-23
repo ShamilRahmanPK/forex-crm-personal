@@ -1,0 +1,179 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.toggleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  align-self: end;
+  min-height: var(--control-height);
+  font-size: var(--fs-sm);
+}
+
+.colorField {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.colorField label {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+}
+
+.colorField small {
+  font-size: var(--fs-xs);
+  color: var(--color-text-secondary);
+}
+
+.colorControl {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: var(--control-height);
+  padding: 0 10px 0 6px;
+  border: 1px solid var(--color-input-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+}
+
+.colorControl input[type='color'] {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  cursor: pointer;
+}
+
+.colorControl input[type='text'] {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+}
+
+/* Live preview, styled from --p-* variables so it can differ from the saved brand */
+.previewWrap {
+  position: sticky;
+  top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.preview {
+  display: flex;
+  overflow: hidden;
+  min-height: 300px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--p-page);
+  font-size: 13px;
+  color: var(--color-text);
+}
+
+.pvSidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 120px;
+  padding: 12px 8px;
+  border-right: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.pvLogo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+  padding: 0 6px;
+  font-weight: 700;
+}
+
+.pvMark {
+  width: 14px;
+  height: 14px;
+  box-sizing: border-box;
+  border: 3px solid var(--p-primary);
+  border-radius: 50%;
+}
+
+.pvNav,
+.pvNavActive {
+  padding: 6px 8px;
+  border-radius: var(--p-radius-sm);
+}
+
+.pvNavActive {
+  background: color-mix(in srgb, var(--p-primary) 22%, var(--color-bg));
+  font-weight: 600;
+}
+
+.pvNav {
+  color: var(--color-text-secondary);
+}
+
+.pvMain {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+}
+
+.pvNotice {
+  padding: 8px 10px;
+  border-radius: var(--p-radius-sm);
+  background: var(--p-banner);
+}
+
+.pvCard {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--p-radius);
+  background: var(--color-bg);
+}
+
+.pvBalance {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.pvActions {
+  display: flex;
+  gap: 6px;
+}
+
+.pvPrimary,
+.pvSecondary {
+  padding: 6px 12px;
+  border-radius: var(--p-radius-sm);
+  font-weight: 600;
+}
+
+.pvPrimary {
+  background: var(--p-primary);
+  color: var(--p-on-primary);
+}
+
+.pvSecondary {
+  border: 1px solid var(--color-input-border);
+}
+
+.pvLink {
+  font-weight: 500;
+  color: var(--p-link);
+}

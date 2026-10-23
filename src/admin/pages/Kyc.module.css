@@ -1,0 +1,55 @@
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.files {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.file {
+  margin: 0;
+}
+
+.preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1.58;
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-page);
+  color: var(--color-text-muted);
+}
+
+.file figcaption {
+  margin-top: 6px;
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+}
+
+.compare {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  background: var(--color-page);
+}
+
+.compare h3 {
+  font-size: var(--fs-md);
+  font-weight: 700;
+}
+
+.reject {
+  background: var(--color-danger);
+  color: var(--color-bg);
+}
+
+.reject:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--color-danger) 88%, black);
+}

@@ -1,0 +1,216 @@
+.page {
+  max-width: 1280px;
+  padding: 26px 32px 0;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.country {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  font-size: var(--fs-lg);
+}
+
+.flag {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.change {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: var(--fs-lg);
+  color: var(--color-link);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.section {
+  margin-top: 48px;
+}
+
+.sectionTitle {
+  margin-bottom: 18px;
+  font-size: var(--fs-xl);
+  font-weight: 500;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 28px;
+}
+
+.method {
+  position: relative;
+  display: flex;
+  gap: 20px;
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+a.method:hover {
+  border-color: var(--color-border-strong);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--color-text) 6%, transparent);
+}
+
+.methodIcon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+}
+
+.methodText {
+  flex: 1;
+  min-width: 0;
+}
+
+.methodHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.methodHead .methodName {
+  flex: 1;
+  min-width: 0;
+}
+
+.methodName {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+}
+
+.methodMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 14px 0 0;
+  font-size: var(--fs-lg);
+  color: var(--color-text-secondary);
+}
+
+.methodMeta div {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 6px;
+}
+
+.methodMeta dt {
+  white-space: nowrap;
+}
+
+.methodMeta dt,
+.methodMeta dd {
+  margin: 0;
+}
+
+.methodLocked .methodName,
+.methodLocked .methodMeta {
+  color: var(--color-text-muted);
+}
+
+.methodLocked .methodIcon {
+  color: var(--color-text-muted);
+}
+
+.verifyBadge {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-soft);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.verifyBadge:hover {
+  background: color-mix(in srgb, var(--color-primary) 40%, var(--color-bg));
+}
+
+.skeleton {
+  height: 184px;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+/* Country picker */
+.countryList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.countryOption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  font-size: var(--fs-md);
+  text-align: left;
+}
+
+.countryOption span {
+  font-size: 22px;
+}
+
+.countryOption:hover {
+  background: var(--color-surface);
+}
+
+.countryActive {
+  background: var(--color-surface);
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: 20px 16px 0;
+  }
+
+  .title {
+    font-size: var(--fs-2xl);
+  }
+
+  .method {
+    padding: 20px;
+  }
+}

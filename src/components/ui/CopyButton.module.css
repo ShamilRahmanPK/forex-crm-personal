@@ -1,0 +1,17 @@
+.button {
+  display: inline-flex;
+  padding: 4px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text);
+  vertical-align: middle;
+}
+
+.button:hover {
+  background: var(--color-surface);
+}
+
+.copied {
+  color: var(--color-success);
+}

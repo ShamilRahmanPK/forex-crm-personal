@@ -1,0 +1,64 @@
+:root {
+  /*
+   * Base values are fallbacks only. BrandProvider overwrites them at runtime
+   * from brand.theme (src/config/brand.js). Derived shades below follow
+   * automatically, so never hard-code a color in a component stylesheet.
+   */
+
+  /* Brand */
+  --color-primary: #ffde02;
+  --color-on-primary: #16152b;
+  --color-primary-hover: color-mix(in srgb, var(--color-primary) 92%, black);
+  --color-primary-active: color-mix(in srgb, var(--color-primary) 85%, black);
+  --color-primary-soft: color-mix(in srgb, var(--color-primary) 18%, var(--color-bg));
+
+  /* Neutrals */
+  --color-text: #16152b;
+  --color-text-secondary: #5e5c78;
+  --color-text-muted: #8c8aa3;
+  --color-bg: #ffffff;
+  --color-page: #f8f8fb;
+  --color-surface: #f3f3f8;
+  --color-surface-hover: color-mix(in srgb, var(--color-surface) 94%, var(--color-text));
+  --color-border: #ececf3;
+  --color-border-strong: color-mix(in srgb, var(--color-border) 75%, var(--color-text));
+  --color-input-border: color-mix(in srgb, var(--color-border) 55%, var(--color-border-strong));
+
+  /* Accents */
+  --color-link: #3b49df;
+  --color-success: #15803d;
+  --color-danger: #dc2626;
+  --color-warning: #b26a00;
+  --color-banner: #fff8d6;
+  --color-banner-accent: color-mix(in srgb, var(--color-banner) 88%, var(--color-text));
+  --color-focus: var(--color-link);
+  --color-checkbox: color-mix(in srgb, var(--color-text) 80%, var(--color-bg));
+  /* Selection marks (radios, checkboxes) stay dark: a light primary would vanish on white */
+  --color-selected: var(--color-text);
+  --color-overlay: color-mix(in srgb, var(--color-text) 40%, transparent);
+
+  /* Typography */
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: var(--font-sans);
+  --fs-xs: 12px;
+  --fs-sm: 14px;
+  --fs-md: 15px;
+  --fs-lg: 17px;
+  --fs-xl: 22px;
+  --fs-2xl: 26px;
+  --fs-3xl: 30px;
+
+  /* Shape & spacing */
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --header-height: 64px;
+  --sidebar-width: 248px;
+  --sidebar-collapsed-width: 72px;
+  --control-height: 44px;
+
+  --shadow-card: 0 2px 6px color-mix(in srgb, var(--color-text) 4%, transparent);
+  --shadow-fab: 0 4px 12px rgba(22, 21, 43, 0.18);
+  --shadow-popover: 0 8px 24px rgba(22, 21, 43, 0.12);
+  --transition: 150ms ease;
+}

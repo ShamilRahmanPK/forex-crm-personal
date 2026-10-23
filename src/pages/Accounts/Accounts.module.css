@@ -1,0 +1,305 @@
+.page {
+  max-width: 1280px;
+  padding: 26px 32px 0;
+}
+
+.titleRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* ---------- Account card ---------- */
+.card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+}
+
+.cardOpen {
+  box-shadow: var(--shadow-card);
+}
+
+.cardHead {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+}
+
+.cardName {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  min-width: 0;
+}
+
+.name {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+}
+
+.meta {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.leverage {
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+}
+
+.balance {
+  min-width: 150px;
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.balance span {
+  font-size: var(--fs-md);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.compactButton {
+  height: 38px;
+  padding: 0 16px;
+}
+
+.toggle {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.toggle:hover {
+  background: var(--color-surface-hover);
+}
+
+.toggle svg {
+  transition: transform var(--transition);
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 16px 22px;
+  border-top: 1px solid var(--color-border);
+}
+
+.stats dt {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.stats dd {
+  margin: 3px 0 0;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.copyable {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  overflow-wrap: anywhere;
+}
+
+.positive {
+  color: var(--color-success);
+}
+
+.negative {
+  color: var(--color-danger);
+}
+
+.cardActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 22px;
+  border-top: 1px solid var(--color-border);
+}
+
+.spacer {
+  flex: 1;
+}
+
+.settingsLink {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--color-link);
+}
+
+.settingsLink:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.skeleton {
+  height: 220px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(90deg, var(--color-surface) 0%, var(--color-bg) 50%, var(--color-surface) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite linear;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 48px 0;
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+  color: var(--color-text-secondary);
+}
+
+/* Trade dialog */
+.tradeDetails {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.tradeDetails > div {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tradeDetails > div:last-child {
+  border-bottom: 0;
+}
+
+.tradeDetails dt {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.tradeDetails dd {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.tradeDetails .tradeHint {
+  font-size: var(--fs-sm);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 980px) {
+  .stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: 20px 16px 0;
+  }
+
+  .cardHead {
+    flex-wrap: wrap;
+    padding: 16px;
+  }
+
+  .cardName {
+    flex-basis: calc(100% - 50px);
+  }
+
+  .toggle {
+    order: 2;
+  }
+
+  .balance {
+    order: 3;
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+  }
+
+  .cardHead > .compactButton {
+    order: 4;
+  }
+
+  .leverage {
+    display: none;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 14px 16px;
+  }
+
+  .cardActions {
+    padding: 14px 16px;
+  }
+
+  .cardActions > .compactButton {
+    flex: 1 1 40%;
+  }
+
+  .spacer {
+    display: none;
+  }
+}

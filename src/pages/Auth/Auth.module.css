@@ -1,0 +1,250 @@
+.page {
+  min-height: 100%;
+  background: var(--color-page);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  padding: 0 32px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.iconButton {
+  display: flex;
+  padding: 8px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.iconButton:hover {
+  background: var(--color-surface);
+}
+
+.main {
+  box-sizing: border-box;
+  width: calc(100% - 32px);
+  max-width: 500px;
+  margin: 48px auto 72px;
+  padding: 36px 36px 40px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+  box-shadow: var(--shadow-card);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Tabs */
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 28px;
+  padding: 4px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.tab {
+  padding: 10px 0;
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-md);
+  color: var(--color-text-secondary);
+  text-align: center;
+  text-decoration: none;
+  transition: color var(--transition), background-color var(--transition);
+}
+
+.tab:hover {
+  color: var(--color-text);
+}
+
+.tabActive {
+  background: var(--color-bg);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--color-text) 10%, transparent);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.eye {
+  display: flex;
+  padding: 6px;
+  border: 0;
+  background: transparent;
+  color: var(--color-text-secondary);
+}
+
+.rulesWrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.rules {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.rules li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color var(--transition);
+}
+
+.ruleDot {
+  width: 8px;
+  height: 8px;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ruleMet {
+  color: var(--color-success);
+}
+
+.ruleMet .ruleDot {
+  background: currentColor;
+}
+
+.counter {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.partner {
+  margin-top: 12px;
+}
+
+.partnerToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: var(--fs-lg);
+}
+
+.partnerToggle svg {
+  transition: transform var(--transition);
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+.partnerField {
+  margin-top: 16px;
+}
+
+.submitBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.submitBlockSpaced {
+  margin-top: 56px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: var(--fs-md);
+  white-space: nowrap;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.forgot {
+  margin-top: 4px;
+  font-size: var(--fs-md);
+  text-align: center;
+  text-decoration: none;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+.formError {
+  margin-top: 8px;
+  font-size: var(--fs-sm);
+  color: var(--color-danger);
+}
+
+.terms {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+}
+
+.termsStrong {
+  font-weight: 600;
+}
+
+.terms a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+.footerWrap {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 32px 64px;
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 0 16px;
+  }
+
+  .footerWrap {
+    padding: 0 16px 48px;
+  }
+
+  .title {
+    font-size: var(--fs-xl);
+  }
+
+  .main {
+    margin: 24px auto 48px;
+    padding: 24px 20px 28px;
+  }
+}

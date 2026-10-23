@@ -1,0 +1,446 @@
+/* Shell: full-height sidebar on the left, header + scrolling content on the right */
+.shell {
+  display: flex;
+  height: 100%;
+  background: var(--color-page);
+}
+
+.column {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+}
+
+/* ---------- Header ---------- */
+.header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 14px;
+  height: var(--header-height);
+  padding: 0 32px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.breadcrumb {
+  flex: 1;
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.breadcrumb span {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.headerDeposit {
+  height: 38px;
+  padding: 0 16px;
+}
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-secondary);
+  transition: background-color var(--transition);
+}
+
+.iconButton:hover {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.menuButton,
+.mobileLogo,
+.closeDrawer {
+  display: none;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--color-primary-soft);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.walletButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 38px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  font-size: var(--fs-md);
+  color: var(--color-text-secondary);
+}
+
+.walletButton strong {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.walletIcon {
+  display: none;
+}
+
+.walletButton:hover {
+  background: var(--color-surface);
+}
+
+.userMenu {
+  position: relative;
+}
+
+.walletOpen {
+  background: var(--color-surface);
+}
+
+.walletPopover {
+  min-width: 300px;
+  padding: 0;
+}
+
+.walletRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.walletAccount {
+  padding: 14px 18px 0;
+}
+
+.walletAmount {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+}
+
+.walletMeta {
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+}
+
+.walletActions {
+  display: flex;
+  gap: 10px;
+  padding: 14px 18px 18px;
+}
+
+.walletActions > * {
+  height: 38px;
+  padding: 0 16px;
+}
+
+.popover {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 40;
+  min-width: 220px;
+  padding: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  box-shadow: var(--shadow-popover);
+}
+
+.popoverEmail {
+  padding: 8px 12px;
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+  overflow-wrap: anywhere;
+}
+
+.popoverItem {
+  width: 100%;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  text-align: left;
+}
+
+.popoverItem:hover {
+  background: var(--color-surface);
+}
+
+.footer {
+  max-width: 1280px;
+  padding: 72px 32px 64px;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: var(--sidebar-width);
+  border-right: 1px solid var(--color-border);
+  background: var(--color-bg);
+  transition: width 200ms ease;
+}
+
+.sidebarHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  padding: 0 24px;
+}
+
+.nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px 14px 16px;
+}
+
+.navSection + .navSection {
+  margin-top: 8px;
+}
+
+.navHeading {
+  padding: 12px 12px 6px;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-md);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.navItem svg {
+  flex-shrink: 0;
+}
+
+.navItem:hover {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.navItemActive {
+  background: var(--color-primary-soft);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.navItemActive:hover {
+  background: var(--color-primary-soft);
+}
+
+.navLabel {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.navBadge {
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--color-primary);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--color-on-primary);
+}
+
+.navExternal {
+  color: var(--color-text-muted);
+}
+
+.collapseButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-muted);
+}
+
+.collapseButton:hover {
+  color: var(--color-text);
+}
+
+.flipped {
+  transform: scaleX(-1);
+}
+
+/* Collapsed (icon-only) sidebar */
+.sidebarCollapsed {
+  width: var(--sidebar-collapsed-width);
+}
+
+.sidebarCollapsed .sidebarHead {
+  justify-content: center;
+  padding: 0;
+}
+
+.sidebarCollapsed .sidebarHead a {
+  font-size: 0;
+}
+
+.sidebarCollapsed .sidebarHead a span {
+  font-size: 19px;
+}
+
+.sidebarCollapsed .navItem {
+  justify-content: center;
+  padding: 0;
+}
+
+.sidebarCollapsed .navLabel,
+.sidebarCollapsed .navBadge,
+.sidebarCollapsed .navExternal,
+.sidebarCollapsed .navHeading {
+  display: none;
+}
+
+.sidebarCollapsed .navSection + .navSection {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border);
+}
+
+.backdrop {
+  display: none;
+}
+
+/* ---------- Mobile: off-canvas sidebar ---------- */
+@media (max-width: 1024px) {
+  .header {
+    padding: 0 12px 0 8px;
+  }
+
+  .menuButton,
+  .mobileLogo {
+    display: flex;
+  }
+
+  .breadcrumb {
+    display: none;
+  }
+
+  .headerRight {
+    margin-left: auto;
+    gap: 6px;
+  }
+
+  .hideMobile,
+  .walletLabel {
+    display: none;
+  }
+
+  .sidebar,
+  .sidebarCollapsed {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 60;
+    width: var(--sidebar-width);
+    transform: translateX(-100%);
+    transition: transform 200ms ease;
+  }
+
+  .sidebarMobileOpen {
+    transform: translateX(0);
+  }
+
+  .closeDrawer {
+    display: flex;
+    padding: 6px;
+    border: 0;
+    border-radius: var(--radius-sm);
+    background: transparent;
+  }
+
+  /* The drawer always shows full labels */
+  .sidebarCollapsed .sidebarHead {
+    justify-content: space-between;
+    padding: 0 24px;
+  }
+
+  .sidebarCollapsed .sidebarHead a {
+    font-size: 19px;
+  }
+
+  .sidebarCollapsed .navItem {
+    justify-content: flex-start;
+    padding: 0 12px;
+  }
+
+  .sidebarCollapsed .navLabel,
+  .sidebarCollapsed .navHeading {
+    display: block;
+  }
+
+  .collapseButton {
+    display: none;
+  }
+
+  .backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 55;
+    display: block;
+    background: var(--color-overlay);
+  }
+}
+
+@media (max-width: 520px) {
+  .headerDeposit {
+    display: none;
+  }
+}
